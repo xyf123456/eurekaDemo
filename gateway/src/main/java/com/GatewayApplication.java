@@ -6,7 +6,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 /**
  * @ClassName: GatewayApplication
- * @Description:  服务网关的应用
+ * @Description:  服务网关的应用,Spring Cloud的另一个组件：zuul，它提供微服务的
+ * 网关功能，即中转站，通过它提供的接口，可以转发不同的服务。
  * @Author:      Administrator
  * @CreateDate: 2019/1/6 11:25
  * @UpdateUser:   Administrator
