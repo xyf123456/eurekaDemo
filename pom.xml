@@ -11,6 +11,7 @@
     <modules>
         <module>eurekaserver</module>
         <module>eurekaprovider</module>
+        <module>gateway</module>
     </modules>
 
     <parent>

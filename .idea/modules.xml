@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/eurekaDemo.iml" filepath="$PROJECT_DIR$/eurekaDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/eurekaprovider/eurekaprovider.iml" filepath="$PROJECT_DIR$/eurekaprovider/eurekaprovider.iml" />
       <module fileurl="file://$PROJECT_DIR$/eurekaserver/eurekaserver.iml" filepath="$PROJECT_DIR$/eurekaserver/eurekaserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
     </modules>
   </component>
 </project>

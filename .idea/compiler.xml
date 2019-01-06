@@ -8,12 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="eurekaprovider" />
         <module name="eurekaserver" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="eurekaDemo" target="1.6" />
-      <module name="eurekaprovider" target="1.6" />
-      <module name="eurekaserver" target="1.6" />
+      <module name="eurekaDemo" target="1.8" />
+      <module name="eurekaprovider" target="1.8" />
+      <module name="eurekaserver" target="1.8" />
+      <module name="gateway" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
