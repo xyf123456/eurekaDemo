@@ -1,6 +1,11 @@
 server:
   port: 8763
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
 spring:
   application:
     name: eurekaclient
@@ -10,12 +15,9 @@ spring:
     config:
        profile: dev
        name: eurekaclient
-       label: master
-       discovery:
-         enabled: true
-         serviceId: config
+       uri: http://127.0.0.1:8888
+endpoints:
+  enabled: true
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+
+

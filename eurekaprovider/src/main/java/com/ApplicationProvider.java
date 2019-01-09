@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Version:        1.0
  **/
 @SpringBootApplication
-@EnableDiscoveryClient  // 在注册中心发现服务
+//@EnableDiscoveryClient  // 在注册中心发现服务
 @EnableEurekaClient
 public class ApplicationProvider {
 
