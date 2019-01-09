@@ -1,0 +1,21 @@
+server:
+  port: 8763
+
+spring:
+  application:
+    name: eurekaclient
+  profiles:
+    active: dev
+  cloud:
+    config:
+       profile: dev
+       name: eurekaclient
+       label: master
+       discovery:
+         enabled: true
+         serviceId: config
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

@@ -1,6 +1,6 @@
 package com.service;
 
-import com.Application;
+import com.FeignApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @UpdateUser: Administrator
  * @Version: 1.0
  **/
-@SpringBootTest(classes = Application.class)
+@SpringBootTest(classes = FeignApplication.class)
 @RunWith(SpringJUnit4ClassRunner.class)
 public class ApiServiceTest1 {
 

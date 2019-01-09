@@ -1,0 +1,33 @@
+server:
+  port: 8888
+
+eureka:
+  instance:
+#  由此可见，它默认是以    ip:application_name:端口    呈现的，例USER-20171007UO:config:8888，通过hostname和instanceId两个属性
+#  我们可以将其转变为：例如：192.168.0.136:8888
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    hostname: ${spring.cloud.client.ipAddress}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/ #注册中心
+
+spring:
+  application:
+    name: config
+  profiles:
+    active: dev   # 配置使用本地储存
+#  cloud:
+#   config:
+#    server:
+#      native:
+#        search-locations: classpath:properties/ # 搜索src/main/resource 下的properties文件夹下的文件
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/lynnlovemin/SpringCloudLesson.git #配置git仓库地址
+          searchPaths: 第09课/config #配置仓库路径
+#          username: ****** #访问git仓库的用户名
+#          password: ****** #访问git仓库的用户密码
+      label: master #配置仓库的分支

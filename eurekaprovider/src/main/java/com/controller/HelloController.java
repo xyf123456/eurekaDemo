@@ -22,6 +22,7 @@ public class HelloController {
 
     @Value("${server.port}")
     private int port;
+
     /**
      * @ Description: 向客户端输出Hello World!
      * 当我们修改了服务提供的端口号时，重新开启服务提供者的应用，
@@ -48,4 +49,6 @@ public class HelloController {
     public String index1() {
         return "Hello spring Cloud!"+port;
     }
+
+
 }

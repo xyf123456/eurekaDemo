@@ -25,5 +25,21 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--Hystrix 给我们提供了一个强大的功能，那就是 Dashboard。Dashboard
+        是一个 Web 界面，它可以让我们监控 Hystrix Command 的响应时间、请
+        求成功率等数据。
+        这三个依赖缺一不可，否则会有意想不到的事情发生。-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
     </dependencies>
 </project>

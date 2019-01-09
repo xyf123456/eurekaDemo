@@ -26,7 +26,7 @@ import java.io.InputStream;
 @Component
 public class ApiFallbackProvider implements ZuulFallbackProvider {
     /**
-     * @ Description: getRoute 方法返回要处理错误的服务名
+     * @ Description: getRoute 方法返回要处理错误的服务名，这里处理的是eurekaclient
      * @params: * @param
      * @return:java.lang.String
      **/
