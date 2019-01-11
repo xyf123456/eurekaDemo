@@ -1,6 +1,7 @@
 package com.controller;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Version: 1.0
  **/
 @RestController
+@RefreshScope //实现手动方式刷新配置的相关依赖
 public class HelloController {
 
     @Value("${server.port}")

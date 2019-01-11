@@ -3,8 +3,25 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 server:
-  port: 8763 #配置这里的端口号来更改监听服务的端口号
-#  port: 8764
+#  port: 8763 #配置这里的端口号来更改监听服务的端口号
+  port: 8764
+#手动刷新配置
+#我们注意到，每次修改配置都需要重新启动服务，配置才会
+#生效，这种做法也比较麻烦，因此我们需要一个机制，每次修
+#改了配置文件，各个服务配置自动生效，Spring Cloud 给我们提供了解决方案。
+#具体步骤：1、eurekaclient中pom中添加依赖spring-boot-starter-actuator；
+#2、修改配置中心的eurekaclient-dev.yml文件修改端口号，需要在HelloController 中
+#添加@RefeshScope注解；3、依次启动注册中心，配置中心，客户端；4、访问http://localhost:8763/index，
+#成功启动服务；修改urekaclient-dev.yml文件修改端口号为8765；POST 方式请求地址：http://localhost:8763/refresh；
+#5、.再次访问4的地址，发现端口号已经修改；
+#自动刷新配置
+#1、利用 Git 仓库的 WebHook，可以设置当有内容 Push 上去后，则通过 HTTP 的 POST 远程请求指定地址。
+#2、利用消息队列如 RabbitMQ、Kafka 等自动通知到每个微服务（本文以 RabbitMQ 为例讲解）。
+#  port: 8765
 spring:
   application:
     name: eurekaclient
+management:
+  security:
+    #关闭安全验证，否则访问refresh端点时会提示权限不足
+    enabled: false

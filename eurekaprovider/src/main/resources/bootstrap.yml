@@ -1,25 +1,30 @@
-#server:
-#  port: 8763
+server:
+  port: 8763
 spring:
   application:
     name: eurekaclient
   profiles:
     active: dev
-#  cloud:
-#    config:
-#       profile: dev #指定配置环境，配置文件如果是多环境则取名类似：eurekaclient-dev.yml
-#       name: eurekaclient #指定配置文件名字（多个配置文件以英文逗号隔开）
-#       uri: http://127.0.0.1:8888  #本地的配置中心：端口号
   cloud:
     config:
-       profile: dev  #指定配置环境，配置文件如果是多环境则取名类似：eurekaclient-dev.yml
+       profile: dev #指定配置环境，配置文件如果是多环境则取名类似：eurekaclient-dev.yml
        name: eurekaclient #指定配置文件名字（多个配置文件以英文逗号隔开）
-       label: master #git仓库分支名
-       discovery:
-          enabled: true
-          service-id: config #连接的配置中心名字（applicaiton.name）
-#endpoints:
-#  enabled: true
+       uri: http://127.0.0.1:8888
+  rabbitmq: #添加rabbitMq相关配置
+     host: localhost
+     port: 5672
+     username: guest
+     password: guest
+#  cloud:
+#    config:
+#       profile: dev  #指定配置环境，配置文件如果是多环境则取名类似：eurekaclient-dev.yml
+#       name: eurekaclient #指定配置文件名字（多个配置文件以英文逗号隔开）
+#       label: master #git仓库分支名
+#       discovery:
+#          enabled: true
+#          service-id: config #连接的配置中心名字（applicaiton.name）
+endpoints:
+  enabled: true
 
 eureka:
   client:
