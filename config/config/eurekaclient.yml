@@ -1,5 +1,5 @@
 server:
-#  port: 8763 #配置这里的端口号来更改监听服务的端口号
+#  port: 8763 #配置这里的端口号来更改监听服务的端口号，可以使用自动刷新实现端口切换
   port: 8764
 #手动刷新配置
 #我们注意到，每次修改配置都需要重新启动服务，配置才会
@@ -17,7 +17,12 @@ server:
 spring:
   application:
     name: eurekaclient
+#Spring Boot 2.0 以后，actuator 默认只开启 health 和 info 端点，要使用 refresh 端点需要通过 management 指定。
 management:
   security:
     #关闭安全验证，否则访问refresh端点时会提示权限不足
     enabled: false
+    endpoints:
+      web:
+        exposure:
+          include: refresh,health,info
