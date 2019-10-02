@@ -19,9 +19,9 @@ spring:
     name: eurekaclient
 #Spring Boot 2.0 以后，actuator 默认只开启 health 和 info 端点，要使用 refresh 端点需要通过 management 指定。
 management:
-  security:
-    #关闭安全验证，否则访问refresh端点时会提示权限不足
-    enabled: false
+#  security:
+#    #关闭安全验证，否则访问refresh端点时会提示权限不足
+#    enabled: false
     endpoints:
       web:
         exposure:
